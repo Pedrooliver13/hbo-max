@@ -1,16 +1,31 @@
-import { Avatar } from 'components/core';
+import { ButtonBrand } from 'components/core';
 import GlobalStyled from 'styles/global';
+
+import HboLogo from 'assets/hbo.svg';
+import WarnerLogo from 'assets/warner.svg';
+import Max from 'assets/max.svg';
+import Dc from 'assets/dc.svg';
+import Cartoon from 'assets/cartoon.svg';
 
 function App() {
   return (
     <>
       <GlobalStyled />
-      <Avatar
-        id="avatar"
-        color="tertiary"
-        size="lg"
-        src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q95/wp-content/uploads/2019/04/legiao_HDefAZOkXB85y1sQd9IVJSNKtlbvE3LpRq4GoWPaTc.jpg.jpeg"
-      />
+      <ButtonBrand name="teste">
+        <img src={HboLogo} alt="HBO" />
+      </ButtonBrand>
+      <ButtonBrand name="teste2">
+        <img src={WarnerLogo} alt="HBO" />
+      </ButtonBrand>
+      <ButtonBrand name="teste3">
+        <img src={Max} alt="HBO" />
+      </ButtonBrand>
+      <ButtonBrand name="teste4">
+        <img src={Dc} alt="HBO" />
+      </ButtonBrand>
+      <ButtonBrand name="teste5">
+        <img src={Cartoon} alt="HBO" />
+      </ButtonBrand>
     </>
   );
 }
