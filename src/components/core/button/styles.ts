@@ -58,7 +58,11 @@ export const Wrapper = styled.a<ButtonProps>`
   `}
 
   &:hover {
-    background: ${C.LightPurple};
+    background-color: ${C.LightPurple};
+
+    ${({ color }) => css`
+      ${color === 'secondary' && `background-color: ${C.Purple};`}
+    `}
   }
 
   svg {
