@@ -50,8 +50,10 @@ export const Wrapper = styled.a<ButtonProps>`
   transition: background 1s ease-in-out;
   pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
 
+  background-color: ${C.Purple};
+
   ${({ color, disabled }) => css`
-    ${color ? buttonModifier[color] : buttonModifier.primary}
+    ${color && buttonModifier[color]}
     ${disabled && buttonModifier.disabled}
   `}
 

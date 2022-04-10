@@ -27,7 +27,7 @@
     "cypress": "cypress run",
     "cypress:chrome": "cypress run -b chrome",
     "cypress:open": "cypress open",
-    "test:component:local": "cypress open-ct --env coverage=false",
+    "test:component:local": "$(npm bin)/cypress open-ct",
     "test:component:coverage": "$(npm bin)/cypress run-ct",
     "lint": "eslint src --max-warnings=0",
     "postinstall": "husky install",

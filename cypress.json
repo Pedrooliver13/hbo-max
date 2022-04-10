@@ -1,4 +1,5 @@
 {
   "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+  "ignoreTestFiles": "node_modules/**",
   "componentFolder": "src/components"
 }
