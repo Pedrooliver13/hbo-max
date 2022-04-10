@@ -21,7 +21,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "test:component:local": "cypress open-ct",
+    "lint": "eslint src --max-warnings=0",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"   
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -42,13 +52,20 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.12.4",
+    "@cypress/webpack-dev-server": "^1.8.4",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
+    "cypress": "^9.5.3",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "html-webpack-plugin": "4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "prettier": "2.6.2"
   }
 }
