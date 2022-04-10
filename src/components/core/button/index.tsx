@@ -1,12 +1,11 @@
-import { ReactChild, ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import * as S from './styles';
 
 interface ButtonProps {
   name: string;
   href?: string;
-  dataCy?: string;
   color?: 'primary' | 'secondary';
-  children: ReactChild;
+  children: ReactNode;
   startIcon?: ReactElement | null;
   endIcon?: ReactElement | null;
   disabled?: boolean;
@@ -16,7 +15,6 @@ interface ButtonProps {
 export const Button = ({
   children,
   name,
-  dataCy,
   color,
   startIcon,
   endIcon,
@@ -28,7 +26,7 @@ export const Button = ({
       {...props}
       id={name}
       name={name}
-      data-cy={dataCy}
+      data-cy={name}
       color={color}
       startIcon={Boolean(startIcon)}
       endIcon={Boolean(endIcon)}
