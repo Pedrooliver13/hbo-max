@@ -1,20 +1,20 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { ButtonBrand } from '.';
+import { CircularButton } from '.';
 import GlobalStyled from 'styles/global';
 
 export default {
-  title: 'Core/Button/ButtonBrand',
-  component: ButtonBrand,
+  title: 'Core/Button/CircularButton',
+  component: CircularButton,
   args: {
     name: 'test',
-    logo: 'cartoon'
+    icon: 'add'
   }
 } as Meta;
 
 export const Basic: Story = (args) => (
   <>
     <GlobalStyled />
-    <ButtonBrand {...args} name={args.name} brand={args.logo} />
+    <CircularButton name={args.name} icon={args.icon} />
   </>
 );

@@ -1,7 +1,6 @@
 import { mount } from '@cypress/react';
 
 import { ButtonBrand } from '.';
-import CartoonLogo from 'assets/cartoon.svg';
 import GlobalStyled from 'styles/global';
 
 const testButtonBrand = () => {
@@ -9,9 +8,7 @@ const testButtonBrand = () => {
     mount(
       <>
         <GlobalStyled />
-        <ButtonBrand {...props} name="test">
-          <img src={CartoonLogo} alt="Cartoon Logo" />
-        </ButtonBrand>
+        <ButtonBrand {...props} name="test" />
       </>
     );
   };
@@ -36,7 +33,6 @@ describe('Link Component', () => {
 
     defaultRender();
     getButtonBrand().get('img').should('be.visible');
-    getButtonBrand().get('img').should('have.attr', 'src', CartoonLogo);
   });
 
   it('Should have a href', () => {
