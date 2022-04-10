@@ -9,7 +9,7 @@ const testButton = () => {
     mount(
       <>
         <GlobalStyled />
-        <Button dataCy="test" {...props}>
+        <Button name="test" {...props}>
           Hello
         </Button>
       </>
