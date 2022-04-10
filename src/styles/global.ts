@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import * as C from './constants';
+
 const GlobalStyled = createGlobalStyle`
   * {
     margin: 0;
@@ -63,7 +65,9 @@ const GlobalStyled = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background-color: #fff;
+    background-color: ${C.Black};
+    color: ${C.White};
+    font-size: 1.6rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;
