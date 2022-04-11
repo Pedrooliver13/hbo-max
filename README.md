@@ -27,14 +27,14 @@ $ npm start or yarn start
 
 ## 📖 How run storybook
 ```
-# run storybook
+# Run storybook
 npm storybook or yarn storybook
 
 ```
 
 ## 🧰 How run tests
 ```
-# test component
+# Test component
 npm test:component:local or yarn test:component:local
 ```
 
