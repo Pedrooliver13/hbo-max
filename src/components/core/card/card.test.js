@@ -3,7 +3,7 @@ import { mount } from '@cypress/react';
 import { Card } from '.';
 import GlobalStyled from 'styles/global';
 
-const testButtonBrand = () => {
+const testCard = () => {
   const defaultRender = (props) => {
     mount(
       <>
@@ -25,16 +25,16 @@ const testButtonBrand = () => {
   return { defaultRender, getCard };
 };
 
-describe('Link Component', () => {
+describe('Card Component', () => {
   it('Should render', () => {
-    const { defaultRender, getCard } = testButtonBrand();
+    const { defaultRender, getCard } = testCard();
 
     defaultRender();
     getCard().should('be.visible');
   });
 
   it('Should have buttons', () => {
-    const { defaultRender, getCard } = testButtonBrand();
+    const { defaultRender, getCard } = testCard();
 
     defaultRender();
     getCard().get('[data-cy=play]');
@@ -42,7 +42,7 @@ describe('Link Component', () => {
   });
 
   it('Should have a href', () => {
-    const { defaultRender, getCard } = testButtonBrand();
+    const { defaultRender, getCard } = testCard();
 
     defaultRender({ href: 'https://www.google.com' });
     getCard()
@@ -51,7 +51,7 @@ describe('Link Component', () => {
   });
 
   it('Should have a image', () => {
-    const { defaultRender, getCard } = testButtonBrand();
+    const { defaultRender, getCard } = testCard();
 
     defaultRender({
       image:

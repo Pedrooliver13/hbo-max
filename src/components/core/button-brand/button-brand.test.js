@@ -20,7 +20,7 @@ const testButtonBrand = () => {
   return { defaultRender, getButtonBrand };
 };
 
-describe('Link Component', () => {
+describe('ButtonBrand Component', () => {
   it('Should render', () => {
     const { defaultRender, getButtonBrand } = testButtonBrand();
 
