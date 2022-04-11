@@ -23,16 +23,30 @@ $ npm install or yarn install
 
 # Run the app
 $ npm start or yarn start
+```
+
+## 📖 How run storybook
+```
+# run storybook
+npm storybook or yarn storybook
 
 ```
+
+## 🧰 How run tests
+```
+# test component
+npm test:component:local or yarn test:component:local
+```
+
+
 ## :rocket: Technologies
 
 -  [React](https://pt-br.reactjs.org/)
 -  [Typescript](https://www.typescriptlang.org/docs/)
--  [husky](https://typicode.github.io/husky/#/)
+-  [Husky](https://typicode.github.io/husky/#/)
 -  [Storybook](https://storybook.js.org/)
--  [styled-components](https://www.styled-components.com/)
--  [cypress](https://www.cypress.io/)
+-  [Styled-components](https://www.styled-components.com/)
+-  [Cypress](https://www.cypress.io/)
 
 ---
 
