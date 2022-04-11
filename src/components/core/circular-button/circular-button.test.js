@@ -3,7 +3,7 @@ import { mount } from '@cypress/react';
 import { CircularButton } from '.';
 import GlobalStyled from 'styles/global';
 
-const testButtonBrand = () => {
+const testCircularButton = () => {
   const defaultRender = (props) => {
     mount(
       <>
@@ -13,34 +13,34 @@ const testButtonBrand = () => {
     );
   };
 
-  const getCIrcularButton = () => {
+  const getCircularButton = () => {
     return cy.get('[data-cy=test]');
   };
 
-  return { defaultRender, getCIrcularButton };
+  return { defaultRender, getCircularButton };
 };
 
-describe('Link Component', () => {
+describe('CircularButton Component', () => {
   it('Should render', () => {
-    const { defaultRender, getCIrcularButton } = testButtonBrand();
+    const { defaultRender, getCircularButton } = testCircularButton();
 
     defaultRender();
-    getCIrcularButton().should('be.visible');
+    getCircularButton().should('be.visible');
   });
 
   it('Should have a icon', () => {
-    const { defaultRender, getCIrcularButton } = testButtonBrand();
+    const { defaultRender, getCircularButton } = testCircularButton();
 
     defaultRender();
-    getCIrcularButton().get('svg').should('be.visible');
-    getCIrcularButton({ icon: 'play' }).get('svg').should('be.visible');
-    getCIrcularButton({ icon: 'check' }).get('svg').should('be.visible');
+    getCircularButton().get('svg').should('be.visible');
+    getCircularButton({ icon: 'play' }).get('svg').should('be.visible');
+    getCircularButton({ icon: 'check' }).get('svg').should('be.visible');
   });
 
   it('Should have a href', () => {
-    const { defaultRender, getCIrcularButton } = testButtonBrand();
+    const { defaultRender, getCircularButton } = testCircularButton();
 
     defaultRender({ href: 'https://www.google.com' });
-    getCIrcularButton().should('have.attr', 'href', 'https://www.google.com');
+    getCircularButton().should('have.attr', 'href', 'https://www.google.com');
   });
 });
