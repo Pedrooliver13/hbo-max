@@ -11,7 +11,7 @@ export default {
     label: 'Button',
     color: true,
     href: '#',
-    startIcon: true,
+    startIcon: false,
     endIcon: false,
     disabled: false
   },

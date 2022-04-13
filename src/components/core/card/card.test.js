@@ -61,4 +61,34 @@ describe('Card Component', () => {
       .should('have.css', 'background-image')
       .should('include', '423fc271-7a33-4155-92db-3c926d8c1af3.jpg');
   });
+
+  it('Should be possible change size', () => {
+    const { defaultRender, getCard } = testCard();
+
+    const cardModifier = {
+      sm: {
+        maxWidth: '200px',
+        height: '200px'
+      },
+      md: {
+        maxWidth: '200px',
+        height: '300px'
+      }
+    };
+
+    defaultRender({ size: 'sm' });
+    getCard().should('have.css', 'width', cardModifier.sm.maxWidth);
+    getCard().should('have.css', 'height', cardModifier.sm.height);
+
+    defaultRender({ size: 'md' });
+    getCard().should('have.css', 'width', cardModifier.md.maxWidth);
+    getCard().should('have.css', 'height', cardModifier.md.height);
+  });
+
+  it('Should have a title', () => {
+    const { defaultRender, getCard } = testCard();
+
+    defaultRender({ title: 'Test' });
+    getCard().get('.title').should('have.text', 'Test');
+  });
 });

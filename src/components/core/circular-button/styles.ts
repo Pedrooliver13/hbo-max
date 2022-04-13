@@ -17,6 +17,6 @@ export const Wrapper = styled.a`
   border-radius: 50%;
 
   svg {
-    width: 2.2rem;
+    width: 2rem;
   }
 `;

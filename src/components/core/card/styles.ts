@@ -1,8 +1,26 @@
 import styled from 'styled-components';
 
+import * as C from 'styles/constants';
+
 interface CardProps {
   image?: string;
+  size: 'sm' | 'md' | 'lg';
 }
+
+const cardModifier = {
+  sm: {
+    maxWidth: '20rem',
+    height: '20rem'
+  },
+  md: {
+    maxWidth: '20rem',
+    height: '30rem'
+  },
+  lg: {
+    maxWidth: '54.8rem',
+    height: '30.7rem'
+  }
+};
 
 export const Wrapper = styled.div<CardProps>`
   max-width: 20rem;
@@ -11,7 +29,9 @@ export const Wrapper = styled.div<CardProps>`
   border-radius: 0.5rem;
   margin: 0.5rem;
 
-  background: ${({ image }) => `url(${image}) center center;`};
+  ${({ size }) => cardModifier[size]};
+
+  background: ${({ image }) => `url(${image}) no-repeat center center;`};
   background-size: cover;
 
   .dashboard {
@@ -29,5 +49,17 @@ export const Wrapper = styled.div<CardProps>`
     &:hover {
       opacity: 1;
     }
+  }
+
+  span {
+    font-size: 1rem;
+    color: ${C.Gray};
+  }
+
+  .title {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    color: ${C.White};
+    text-transform: capitalize;
   }
 `;
