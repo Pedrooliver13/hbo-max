@@ -9,16 +9,19 @@ interface CardProps {
 
 const cardModifier = {
   sm: {
-    maxWidth: '20rem',
-    height: '20rem'
+    maxWidth: '200px',
+    width: '200px',
+    height: '200px'
   },
   md: {
-    maxWidth: '20rem',
-    height: '30rem'
+    maxWidth: '200px',
+    width: '200px',
+    height: '300px'
   },
   lg: {
-    maxWidth: '54.8rem',
-    height: '30.7rem'
+    maxWidth: '548px',
+    width: '548px',
+    height: '307px'
   }
 };
 
