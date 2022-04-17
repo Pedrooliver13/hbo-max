@@ -3,10 +3,11 @@ import { CircularButton } from 'components/core';
 import * as S from './styles';
 
 interface CardProps {
-  name: string;
+  name?: string;
   image: string;
   href: string;
   title?: string;
+  className?: string;
   type?: 'movie' | 'series';
   size?: 'sm' | 'md' | 'lg';
 }
@@ -16,7 +17,7 @@ export const Card = ({
   image,
   href,
   title,
-  type = 'series',
+  type = 'movie',
   size = 'md'
 }: CardProps) => {
   return (
