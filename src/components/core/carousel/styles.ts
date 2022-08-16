@@ -14,14 +14,17 @@ export const Arrow = styled.div<ArrowProps>`
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1;
-  background-color: rgba(15, 15, 15, 0.85);
   width: 55px;
   height: 100%;
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
+  background: ${({ type }) =>
+    type === 'next'
+      ? `linear-gradient(to left, #050404 2%, transparent 70%);`
+      : `linear-gradient(to right, #050404 2%, transparent 70%);`};
 
-  ${({ type }) => (type === 'next' ? `right: 0;` : `left: 0;`)}
+  ${({ type }) => (type === 'next' ? `right: 0;` : `left: 0;`)};
 `;
 
 export const Wrapper = styled.section`
