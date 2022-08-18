@@ -19,9 +19,9 @@ const cardModifier = {
     height: '300px'
   },
   lg: {
-    maxWidth: '548px',
-    width: '548px',
-    height: '307px'
+    maxWidth: '348px',
+    width: '348px',
+    height: '207px'
   }
 };
 
@@ -31,9 +31,11 @@ export const Wrapper = styled.div<CardProps>`
   height: 30rem;
   border-radius: 0.5rem;
   margin: 0.5rem;
+  cursor: pointer;
 
   ${({ size }) => cardModifier[size]};
 
+  border: 2px solid transparent;
   background: ${({ image }) => `url(${image}) no-repeat center center;`};
   background-size: cover;
 
@@ -52,6 +54,10 @@ export const Wrapper = styled.div<CardProps>`
     &:hover {
       opacity: 1;
     }
+  }
+
+  &:hover {
+    border: 2px solid ${C.Purple};
   }
 
   span {

@@ -65,7 +65,7 @@ const GlobalStyled = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background-color: ${C.Black};
+    background: url('/images/background.png') no-repeat center center fixed;
     color: ${C.White};
     font-size: 1.6rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

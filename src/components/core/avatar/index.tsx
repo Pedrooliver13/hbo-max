@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import DefaultImage from 'assets/avatar.jpg';
 
 import * as S from './styles';
@@ -20,7 +22,7 @@ export const Avatar = ({
   label,
   size,
   alt = 'Avatar image'
-}: AvatarProps) => {
+}: AvatarProps): ReactElement => {
   return (
     <S.Wrapper color={color} size={size} id={id} data-cy={id}>
       <a href={href}>

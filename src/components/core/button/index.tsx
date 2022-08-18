@@ -20,7 +20,7 @@ export const Button = ({
   endIcon,
   disabled,
   ...props
-}: ButtonProps) => {
+}: ButtonProps): ReactElement => {
   return (
     <S.Wrapper
       {...props}
