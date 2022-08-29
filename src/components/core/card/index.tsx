@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { CircularButton } from 'components/core';
 
 import * as S from './styles';
@@ -19,7 +21,7 @@ export const Card = ({
   title,
   type = 'movie',
   size = 'md'
-}: CardProps) => {
+}: CardProps): ReactElement => {
   return (
     <S.Wrapper id={name} data-cy={name} image={image} size={size}>
       <div className="dashboard">

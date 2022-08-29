@@ -1,5 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { ReactElement } from 'react';
 import Slider from 'react-slick';
+
 import { ArrowIosForwardOutline } from '@styled-icons/evaicons-outline/ArrowIosForwardOutline';
 import { ArrowIosBackOutline } from '@styled-icons/evaicons-outline/ArrowIosBackOutline';
 
@@ -20,15 +21,19 @@ interface CarouselArrowProps {
   onClick?: () => void;
 }
 
-function Arrow({ onClick, type = 'prev' }: CarouselArrowProps) {
+function Arrow({ onClick, type = 'prev' }: CarouselArrowProps): ReactElement {
   return (
     <S.Arrow onClick={onClick} type={type}>
-      {type === 'prev' ? <ArrowIosBackOutline /> : <ArrowIosForwardOutline />}
+      {type === 'prev' ? (
+        <ArrowIosBackOutline size={40} />
+      ) : (
+        <ArrowIosForwardOutline size={40} />
+      )}
     </S.Arrow>
   );
 }
 
-export const Carousel = ({ children, title }: CarouselProps) => {
+export const Carousel = ({ children, title }: CarouselProps): ReactElement => {
   const settings = {
     infinite: true,
     speed: 500,

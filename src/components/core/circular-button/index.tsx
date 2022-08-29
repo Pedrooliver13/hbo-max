@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { Add } from '@styled-icons/fluentui-system-filled/Add';
 import { PlayFill } from '@styled-icons/bootstrap/PlayFill';
 import { Check2 } from '@styled-icons/bootstrap/Check2';
@@ -19,7 +21,7 @@ export const CircularButton = ({
   name,
   href,
   icon = 'add'
-}: CircularButtonProps) => {
+}: CircularButtonProps): ReactElement => {
   const Icon = listIcons[icon];
 
   return (

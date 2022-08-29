@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import * as C from 'styles/constants';
+
 interface ArrowProps {
   type?: 'prev' | 'next';
 }
@@ -29,16 +31,22 @@ export const Arrow = styled.div<ArrowProps>`
 
 export const Wrapper = styled.section`
   position: relative;
-  width: 100%;
+  width: 98%;
+  margin-left: 2rem;
+  overflow-x: hidden;
 
   h1 {
     text-transform: capitalize;
     font-weight: bold;
     font-size: 2.2rem;
-    margin: 2.2rem 2rem;
+    margin: 2rem 1rem;
   }
 
   &:hover ${Arrow} {
     opacity: 1;
+  }
+
+  @media (max-width: ${C.MD}) {
+    margin-left: 0;
   }
 `;

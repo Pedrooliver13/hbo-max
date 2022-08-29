@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import HboLogo from 'assets/hbo.svg';
 import WarnerLogo from 'assets/warner.svg';
 import Max from 'assets/max.svg';
@@ -39,7 +41,7 @@ export const ButtonBrand = ({
   brand = 'hbo',
   href,
   name
-}: ButtonBrandProps) => {
+}: ButtonBrandProps): ReactElement => {
   const { logo, alt } = listBrands[brand];
 
   return (
