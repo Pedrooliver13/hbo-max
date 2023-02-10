@@ -1,11 +1,14 @@
 import { ReactElement, ReactNode } from 'react';
 
+import { Header } from 'components/layout';
+
 interface BaseProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
-const Base = (props: BaseProps): ReactElement => {
-  return <div>{props.children}</div>;
-};
-
-export default Base;
+export const Base = (props: BaseProps): ReactElement => (
+  <>
+    <Header />
+    {props.children}
+  </>
+);

@@ -5,10 +5,7 @@ import * as S from './styles';
 export const SectionHero = (): ReactElement => {
   return (
     <S.Wrapper>
-      <img
-        src="https://i.pinimg.com/originals/0a/4d/cb/0a4dcb92fa2d3c601b58d72720d6bec4.jpg"
-        alt=""
-      />
+      <img src="https://static.dw.com/image/62850747_101.jpg" alt="" />
     </S.Wrapper>
   );
 };
