@@ -4,4 +4,6 @@ interface BaseProps {
   children?: ReactNode
 }
 
-export const Base = (props: BaseProps): ReactElement => <>{props.children}</>
+const Base = (props: BaseProps): ReactElement => <>{props.children}</>
+
+export default Base
