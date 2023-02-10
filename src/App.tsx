@@ -1,10 +1,11 @@
+import { Base } from 'templates';
 import { Carousel, Card, SectionHero } from 'components/core';
 
 import GlobalStyled from 'styles/global';
 
 function App() {
   return (
-    <>
+    <Base>
       <GlobalStyled />
       <SectionHero />
 
@@ -46,7 +47,7 @@ function App() {
             ))}
         </Carousel>
       </div>
-    </>
+    </Base>
   );
 }
 
