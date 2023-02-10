@@ -1,14 +1,7 @@
-import { ReactElement, ReactNode } from 'react';
-
-import { Header } from 'components/layout';
+import { ReactElement, ReactNode } from 'react'
 
 interface BaseProps {
-  children?: ReactNode;
+  children?: ReactNode
 }
 
-export const Base = (props: BaseProps): ReactElement => (
-  <>
-    <Header />
-    {props.children}
-  </>
-);
+export const Base = (props: BaseProps): ReactElement => <>{props.children}</>

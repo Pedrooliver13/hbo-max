@@ -1,35 +1,594 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "cypress/globals": true
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "extraFileExtensions": [".json"],
+    "createDefaultProgram": true
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier",
+    "cypress",
+    "import-alias",
+    "grouped-import",
+    "unicorn",
+    "folders",
+    "sonarjs"
+  ],
   "extends": [
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:cypress/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:cypress/recommended",
     "plugin:prettier/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "src/resources",
+            "from": "**/services/http/*",
+            "message": "Don't use httpClient or recursiveHttpClient inside views. Use dataProvider or RTK instead."
+          }
+        ]
+      }
+    ],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "react/self-closing-comp": "error",
+    "react/jsx-newline": ["error", { "prevent": true }],
+    "react/boolean-prop-naming": [
+      "warn",
+      {
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+        "message": "The boolean prop ({{ propName }}) must be prefixed with (is or has)",
+        "validateNested": true
+      }
+    ],
+    "sonarjs/no-useless-catch": "warn",
+    "sonarjs/no-unused-collection": "warn",
+    "sonarjs/no-collection-size-mischeck": "warn",
+    "sonarjs/no-duplicated-branches": "warn",
+    "sonarjs/no-same-line-conditional": "warn",
+    "sonarjs/no-inverted-boolean-check": "error",
+    "sonarjs/no-redundant-boolean": "warn",
+    "sonarjs/prefer-single-boolean-return": "warn",
+    "sonarjs/no-collapsible-if": "warn",
+    "quotes": ["warn", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
+    "cypress/no-unnecessary-waiting": "off",
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-empty-function": "warn",
     "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "no-useless-escape": ["off"],
+    "radix": ["off"],
+    "array-callback-return": ["off"],
+    "no-return-assign": ["off"],
+    "capitalized-comments": ["off"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "camelcase": ["off"],
+    "new-cap": ["off"],
+    "func-names": ["off"],
+    "no-prototype-builtins": ["off"],
+    "no-console": ["warn", { "allow": ["error"] }],
+    "eqeqeq": ["error"],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='FunctionField']",
+        "message": "Use 'FunctionField' from 'components/core' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='DateField']",
+        "message": "Use 'CustomDateField' from 'components/core' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='DateInput']",
+        "message": "Use 'DateInput' from 'components/core' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='DateTimeInput']",
+        "message": "Use 'DateTimeInput' from 'components/core' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='CreateButton']",
+        "message": "Use 'Button' from 'react-admin' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='usePermissions']",
+        "message": "Use 'usePermissions' from 'hooks/use-permissions' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='@mui/material'] > ImportSpecifier[imported.name=/Dialog*/]",
+        "message": "Just use 'SimpleDialog' from 'components/core' as it is instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='List']",
+        "message": "Use 'List' from 'components/core' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-redux'] > ImportSpecifier[imported.name='useSelector']",
+        "message": "Use 'useAppSelector' from 'hooks' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-redux'] > ImportSpecifier[imported.name='useDispatch']",
+        "message": "Use 'useAppDispatch' from 'hooks' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='.']",
+        "message": "Do not use relative path imports."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='UserMenu']",
+        "message": "Use 'UserMenu' from 'components/layouts' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='useGetIdentity']",
+        "message": "Use 'useGetUserConfigQuery' from 'stores/api' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react-admin'] > ImportSpecifier[imported.name='Confirm']",
+        "message": "Use 'SimpleDialog' from 'components/core' instead."
+      },
+      {
+        "selector": "MemberExpression[object.name='Promise'] > Identifier[name='allSettled']",
+        "message": "Use 'allSettled' from 'services/utils' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react'] > ImportSpecifier[imported.name='FC']",
+        "message": "Don't use 'FC' as a type. Use explicit types for props and return. You must manually create a custom interface for props and use 'ReactElement' for the return."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='react'] > ImportDefaultSpecifier[local.name='React']",
+        "message": "Starting from React 17, it is not necessary to import 'React' anymore."
+      },
+      {
+        "selector": "TSQualifiedName[left.name='React']",
+        "message": "Import directly from 'react' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='@mui/lab'] > ImportSpecifier[imported.name=/Alert*/]",
+        "message": "Import it from '@mui/material' instead."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='prop-types']",
+        "message": "We don't use 'prop-types' anymore. Build a good TypeScript structure instead and you won't need runtime validation."
+      },
+      {
+        "selector": "ImportDeclaration[source.value='@mui/material'] > ImportSpecifier[imported.name='createTheme']",
+        "message": "Use 'createTheme' from 'config/theme/custom-mui-themes' instead."
+      },
+      {
+        "selector": "JSXAttribute[name.name='data-testid'] > JSXExpressionContainer",
+        "message": "The value must not be dynamic, it must be a static string."
+      },
+      {
+        "selector": "JSXAttribute[name.name=/^data-/][name.name!=/^(data-testid)$|^(data-cy)$|^(data-key)$/]",
+        "message": "For any 'data-' attribute, it is only allowed to use 'data-testid', 'data-cy', or 'data-key'. Any other name is not allowed."
+      },
+      {
+        "selector": "Property[key.name='endpoints'] Property[key.name='query'] Property[key.name='method'][value.value='GET']",
+        "message": "'GET' is the default method value, it must not be declared explicitly."
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "ra-core",
+          "components/core/*",
+          "components/shared/*",
+          "!components/core/ra-extras",
+          "!components/core/cards",
+          "!components/core/images",
+          "!components/core/paginations",
+          "!components/core/tabs",
+          "@mui/**",
+          "!@mui/material",
+          "!@mui/icons-material",
+          "!@mui/lab",
+          "!@mui/styles",
+          "!@mui/system",
+          "!@mui/material/colors",
+          "pages/*"
+        ]
+      }
+    ],
+    "react/prop-types": ["off"],
+    "react/jsx-key": ["off"],
+    "react/jsx-curly-brace-presence": ["error"],
+    "padding-line-between-statements": "off",
+    "@typescript-eslint/padding-line-between-statements": [
+      "error",
+      // Basically, there are only two rules here:
+      // 1. Different statements MUST be separated by a blank line.
+      // 2. Block/Multiline statements MUST be separated by a blank line.
+      { "blankLine": "always", "prev": "import", "next": "*" },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "const",
+          "let",
+          "var",
+          "if",
+          "switch",
+          "for",
+          "do",
+          "while",
+          "try",
+          "function",
+          "break",
+          "continue",
+          "throw",
+          "export",
+          "return",
+          "interface",
+          "type"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var",
+          "if",
+          "switch",
+          "for",
+          "do",
+          "while",
+          "try",
+          "function",
+          "break",
+          "continue",
+          "throw",
+          "export",
+          "return",
+          "interface",
+          "type"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["import", "const", "let", "var", "multiline-const", "multiline-let", "multiline-var"],
+        "next": ["import", "const", "let", "var", "multiline-const", "multiline-let", "multiline-var"]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["block", "block-like", "multiline-block-like", "multiline-expression"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["block", "block-like", "multiline-block-like", "multiline-expression"],
+        "next": "*"
+      }
+    ],
+    "react/jsx-boolean-value": ["warn"],
+    "import/no-unassigned-import": ["off", { "allow": ["**/*.css"] }],
+    "import/no-unresolved": ["off"],
+    "import/extensions": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/order": ["off"],
+    "mocha/no-mocha-arrows": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/camelcase": ["off"],
+    "@typescript-eslint/ban-ts-comment": ["off"],
+    "@typescript-eslint/ban-ts-ignore": ["off"],
+    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+    "@typescript-eslint/no-extra-semi": ["off"],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-implicit-coercion": ["error"],
+    "react/prefer-stateless-function": ["error"],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "require-await": ["error"],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        // By default, everything must be in 'camelCase', unless it meets any of the rules below.
+        "selector": "default",
+        "format": ["strictCamelCase"]
+      },
+      {
+        // Destructured boolean variables must be prefixed with 'is' or 'has'.
+        "selector": ["variableLike"],
+        "modifiers": ["destructured"],
+        "format": null,
+        "prefix": ["is", "has"],
+        "types": ["boolean"]
+      },
+      {
+        // We can't control objects properties, as it may be built by us, may be from react-admin, APIs, or wherever, so no rules can be enforced.
+        "selector": ["property"],
+        "format": null
+      },
+      {
+        // Enumerations members must be in 'UPPER_CASE' as they always have constant values.
+        "selector": ["enumMember"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        // Types and Interfaces must be in 'PascalCase'.
+        "selector": ["typeLike"],
+        "format": ["StrictPascalCase"]
+      },
+      {
+        // Variables must be in 'camelCase'.
+        // Variables containing JSX components must be in 'PascalCase'.
+        // Constant variables (​​variables with constant values, not simply a 'const') must be in 'UPPER_CASE'.
+        "selector": ["variableLike"],
+        "format": ["strictCamelCase", "StrictPascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "forbid" // ​Used variables must NOT have a leading underscore.
+      },
+      {
+        "selector": ["variableLike"],
+        "modifiers": ["unused"],
+        "format": ["strictCamelCase", "StrictPascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "require" // ​​Unused variables must have a leading underscore.
+      },
+      {
+        "selector": ["variableLike"],
+        "modifiers": ["destructured"],
+        "format": null // Variables coming from destructuring must NOT have any case enforcement, as they come already named from the destructured object.
+      }
+    ],
+    "import-alias/import-alias": [
+      "error",
+      {
+        "aliases": [
+          { "alias": "assets/", "matcher": "^src/assets/" },
+          { "alias": "components/", "matcher": "^src/components/" },
+          { "alias": "config/", "matcher": "^src/config/" },
+          { "alias": "helpers/", "matcher": "^src/helpers/" },
+          { "alias": "utils/", "matcher": "^src/utils/" },
+          { "alias": "hooks/", "matcher": "^src/hooks/" },
+          { "alias": "models/", "matcher": "^src/models/" },
+          { "alias": "pages/", "matcher": "^src/pages/" },
+          { "alias": "resources/", "matcher": "^src/resources/" },
+          { "alias": "services/", "matcher": "^src/services/" },
+          { "alias": "store/", "matcher": "^src/store/" },
+          { "alias": "", "matcher": "^src/" }
+        ]
+      }
+    ],
+    "grouped-import/group": [
+      "warn",
+      {
+        "Pages": [{ "path": "pages" }],
+        "Packages": [
+          { "path": "react" },
+          { "path": "lodash" },
+          { "path": "jsonexport" },
+          { "path": "redux" },
+          { "path": "date-fns" },
+          { "path": "prop-types" },
+          { "path": "classnames" },
+          { "path": "ra-" },
+          { "path": "brazilian-utils" },
+          { "path": "axios" },
+          { "path": "handsontable" },
+          { "path": "file-saver" },
+          { "path": "flat" },
+          { "path": "ace-builds" },
+          { "path": "keycloak-js" },
+          { "path": "@microsoft/fetch-event-source" },
+          { "path": "uuid" },
+          { "path": "recharts" },
+          { "path": "@emotion" },
+          { "path": "@mui" },
+          { "path": "@rjsf" },
+          { "path": "@hookform" },
+          { "path": "cypress-recurse" }
+        ],
+        "Assets": [
+          { "path": "assets" },
+          { "path": ".png" },
+          { "path": ".svg" },
+          { "path": ".jpg" },
+          { "path": ".ttf" }
+        ],
+        "Components": [{ "path": "components/" }],
+        "Configs": [
+          { "path": "config/auth" },
+          { "path": "config/constants" },
+          { "path": "config/exporter" },
+          { "path": "config/log" },
+          { "path": "config/providers" },
+          { "path": "config/security" },
+          { "path": "config/store" },
+          { "path": "config/theme" },
+          { "path": ".data-provider" }
+        ],
+        "Helpers": [
+          { "path": "helpers" },
+          { "path": "helpers/fixtures/user.json" },
+          { "path": "helpers/fixtures/messages.json" },
+          { "path": "helpers/fixtures/organization.json" }
+        ],
+        "Utils": [{ "path": "utils" }, { "path": "utils/services" }, { "path": "utils/pages/sales" }],
+        "Hooks": [{ "path": "hooks" }],
+        "Models": [{ "path": "models/" }, { "path": ".model" }],
+        "Resources": [{ "path": "resources/" }, { "path": "resources/devices-models/" }],
+        "Services": [{ "path": "services" }, { "path": ".service" }],
+        "Stores": [{ "path": "store" }, { "path": ".reducer" }, { "path": ".api" }],
+        "Styles": [{ "path": ".css" }],
+        "Icons": [{ "path": "@mui/icons-material" }],
+        "Constants": [{ "path": "constants" }]
+      }
+    ],
+    "folders/match-regex": ["error", "(__mocks__)|(^[a-z0-9-\\\\]+(-[a-z0-9]+)*$)", "bank-admin"],
+    "unicorn/filename-case": ["error", { "case": "kebabCase" }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "curly": "error",
+    "@typescript-eslint/ban-types": [
+      "warn",
+      {
+        "types": {
+          "JSX.Element": "Use 'ReactElement' instead.",
+          "React.FC": "Use explicit types for props and return. You must manually create a custom interface for props and use 'ReactElement' for the return."
+        }
+      }
+    ],
+    "arrow-body-style": ["warn", "as-needed"]
+  },
+  "overrides": [
+    {
+      "files": ["*.test.tsx", "*.spec.tsx", "*.spec.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": ["off"]
+      }
+    },
+    {
+      "files": ["*.json"],
+      "rules": {
+        "quotes": ["off"],
+        "no-unused-expressions": ["off"]
+      }
+    },
+    {
+      "files": ["**/components/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["!components/shared/*", "constants/*/*"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/pages/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["!pages/*"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["index.ts"],
+      "rules": {
+        "@typescript-eslint/padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "never",
+            "prev": ["export"],
+            "next": ["export"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "excludedFiles": ["*saga.*", "*store.*"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          {
+            "allowExpressions": true,
+            "allowTypedFunctionExpressions": true,
+            "allowHigherOrderFunctions": true,
+            "allowDirectConstAssertionInArrowFunctions": true,
+            "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["package.json"],
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "Property[key.value='handsontable'][value.value!='6.2.2']",
+            "message": "The 'handsontable' package MUST NOT be changed because it is already in the latest free version available for commercial use. Read more at https://github.com/handsontable/handsontable/issues/5831.\n\t- Current version: https://www.npmjs.com/package/handsontable/v/6.2.2#license\n\t- Next version: https://www.npmjs.com/package/handsontable/v/7.0.0#license-key\n"
+          },
+          {
+            "selector": "Property[key.value='@handsontable/react'][value.value!='2.1.0']",
+            "message": "The '@handsontable/react' package MUST NOT be changed because it is already in the latest free version available for commercial use. Read more at https://github.com/handsontable/handsontable/issues/5831.\n\t- Current version: https://www.npmjs.com/package/@handsontable/react/v/2.1.0#licensing\n\t- Next version: https://www.npmjs.com/package/@handsontable/react/v/3.0.0#license-key\n"
+          },
+          {
+            "selector": "Property[key.value='keycloak-js'][value.value!='^11.0.3']",
+            "message": "The 'keycloak-js' package MUST NOT be changed unless the DevOps team changes its backend version in sync. If Keycloak was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='@mui/material'][value.value!='^5.0.2']",
+            "message": "The '@mui/material' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='@mui/icons-material'][value.value!='^5.0.1']",
+            "message": "The '@mui/icons-material' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='@emotion/react'][value.value!='^11.4.1']",
+            "message": "The '@emotion/react' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='@emotion/styled'][value.value!='^11.3.0']",
+            "message": "The '@emotion/styled' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='react-hook-form'][value.value!='^7.40.0']",
+            "message": "The 'react-hook-form' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='react-router'][value.value!='^6.1.0']",
+            "message": "The 'react-router' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='react-router-dom'][value.value!='^6.1.0']",
+            "message": "The 'react-router-dom' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='react-query'][value.value!='^3.32.1']",
+            "message": "The 'react-query' package MUST be the same as the one used in React Admin. Check the current installed version of React Admin in the 'package.json' file, and check the version installed in the corresponding version of React Admin here: https://github.com/marmelab/react-admin/releases. If the React Admin package was indeed updated, update this rule."
+          },
+          {
+            "selector": "Property[key.value='prop-types'][value.value!='^15.8.1']",
+            "message": "The 'prop-types' package MUST NOT be changed, as it is deprected and will be removed soon."
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/cypress/**"],
+      "rules": {
+        // Para que essas duas regras possam ser utilizadas (alias nos imports + agrupamento dos imports pelos alias),
+        // é preciso configurar o `tsconfig.json` para trabalhar com outro basePath além do /src, no caso, /cypress.
+        "import-alias/import-alias": "off",
+        "grouped-import/group": "off"
+      }
+    }
+  ],
+  "globals": {
+    "process": true
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "cypress/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }
