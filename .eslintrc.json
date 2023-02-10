@@ -5,17 +5,7 @@
     "extraFileExtensions": [".json"],
     "createDefaultProgram": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react-hooks",
-    "prettier",
-    "cypress",
-    "import-alias",
-    "grouped-import",
-    "unicorn",
-    "folders",
-    "sonarjs"
-  ],
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier", "cypress", "folders"],
   "extends": [
     "react-app",
     "plugin:@typescript-eslint/recommended",
