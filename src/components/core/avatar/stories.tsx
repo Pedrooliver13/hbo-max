@@ -9,11 +9,11 @@ export default {
   args: {
     label: 'Pedro',
     color: 'primary',
-    size: 'md'
-  }
+    size: 'md',
+  },
 } as Meta;
 
-export const Basic: Story = (args) => (
+export const Basic: Story = args => (
   <>
     <GlobalStyled />
     <Avatar {...args} id="avatar" />

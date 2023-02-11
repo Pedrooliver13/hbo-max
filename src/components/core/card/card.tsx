@@ -1,20 +1,17 @@
-// Packages
-import { ReactElement } from 'react'
+import { ReactElement } from 'react';
 
-// Components
-import { CircularButton } from 'components/core'
+import { CircularButton } from 'components/core';
 
-// Styles
-import * as S from './styles'
+import * as S from './styles';
 
 interface CardProps {
-  name?: string
-  image: string
-  href: string
-  title?: string
-  className?: string
-  type?: 'movie' | 'series'
-  size?: 'sm' | 'md' | 'lg'
+  name?: string;
+  image: string;
+  href: string;
+  title?: string;
+  className?: string;
+  type?: 'movie' | 'series';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const Card = ({ name, image, href, title, type = 'movie', size = 'md' }: CardProps): ReactElement => {
@@ -29,7 +26,7 @@ const Card = ({ name, image, href, title, type = 'movie', size = 'md' }: CardPro
         <h2 className="title">{title}</h2>
       </div>
     </S.Wrapper>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

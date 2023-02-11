@@ -6,12 +6,12 @@ import GlobalStyled from 'styles/global';
 
 describe('Avatar Component', () => {
   const testAvatar = () => {
-    const defaultRender = (props) =>
+    const defaultRender = props =>
       mount(
         <>
           <GlobalStyled />
           <Avatar {...props} id="avatar" />
-        </>
+        </>,
       );
 
     const getAvatar = () => cy.get('[data-cy="avatar"]');
@@ -32,7 +32,7 @@ describe('Avatar Component', () => {
     const DefaultWidth = {
       sm: '40px',
       md: '165px',
-      lg: '191px'
+      lg: '191px',
     };
 
     defaultRender({ size: 'sm' });
@@ -54,7 +54,7 @@ describe('Avatar Component', () => {
       secondary:
         'rgba(0, 0, 0, 0) linear-gradient(313.21deg, rgb(252, 0, 196) 16.17%, rgb(255, 140, 230) 87.96%) repeat scroll 0% 0% / auto padding-box border-box',
       tertiary:
-        'rgba(0, 0, 0, 0) linear-gradient(90.36deg, rgb(71, 16, 193) 3.28%, rgb(120, 87, 255) 50.58%, rgb(129, 155, 253) 96.22%) repeat scroll 0% 0% / auto padding-box border-box'
+        'rgba(0, 0, 0, 0) linear-gradient(90.36deg, rgb(71, 16, 193) 3.28%, rgb(120, 87, 255) 50.58%, rgb(129, 155, 253) 96.22%) repeat scroll 0% 0% / auto padding-box border-box',
     };
 
     defaultRender({ color: 'primary' });
@@ -71,11 +71,7 @@ describe('Avatar Component', () => {
     const { defaultRender } = testAvatar();
 
     defaultRender({ src: 'https://via.placeholder.com/150' });
-    cy.get('[data-cy=avatar] img').should(
-      'have.attr',
-      'src',
-      'https://via.placeholder.com/150'
-    );
+    cy.get('[data-cy=avatar] img').should('have.attr', 'src', 'https://via.placeholder.com/150');
   });
 
   it('Should render with custom alt', () => {
@@ -89,11 +85,7 @@ describe('Avatar Component', () => {
     const { defaultRender } = testAvatar();
 
     defaultRender({ href: 'https://www.google.com' });
-    cy.get('[data-cy=avatar] a').should(
-      'have.attr',
-      'href',
-      'https://www.google.com'
-    );
+    cy.get('[data-cy=avatar] a').should('have.attr', 'href', 'https://www.google.com');
   });
 
   it('Should have a label', () => {

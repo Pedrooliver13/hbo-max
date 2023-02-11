@@ -1,20 +1,17 @@
-// Packages
-import { ReactElement } from 'react'
+import { ReactElement } from 'react';
 
-// Assets
-import HboLogo from 'assets/hbo.svg'
-import WarnerLogo from 'assets/warner.svg'
-import MaxLogo from 'assets/max.svg'
-import DcLogo from 'assets/dc.svg'
-import CartoonLogo from 'assets/cartoon.svg'
+import HboLogo from 'assets/hbo.svg';
+import WarnerLogo from 'assets/warner.svg';
+import MaxLogo from 'assets/max.svg';
+import DcLogo from 'assets/dc.svg';
+import CartoonLogo from 'assets/cartoon.svg';
 
-// Styles
-import * as S from './styles'
+import * as S from './styles';
 
 interface ButtonBrandProps {
-  brand?: 'hbo' | 'warner' | 'cartoon' | 'max' | 'dc'
-  href?: string
-  name: string
+  brand?: 'hbo' | 'warner' | 'cartoon' | 'max' | 'dc';
+  href?: string;
+  name: string;
 }
 
 const listBrands = {
@@ -38,16 +35,16 @@ const listBrands = {
     logo: DcLogo,
     alt: 'DC',
   },
-}
+};
 
 const ButtonBrand = ({ brand = 'hbo', href, name }: ButtonBrandProps): ReactElement => {
-  const { logo, alt } = listBrands[brand]
+  const { logo, alt } = listBrands[brand];
 
   return (
     <S.Wrapper id={name} data-cy={name} href={href}>
       <img src={logo} alt={alt} />
     </S.Wrapper>
-  )
-}
+  );
+};
 
-export default ButtonBrand
+export default ButtonBrand;

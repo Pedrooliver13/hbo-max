@@ -1,7 +1,7 @@
-import { Base } from 'templates'
-import { Carousel, Card, SectionHero } from 'components/core'
+import { Base } from 'templates';
+import { Carousel, Card, SectionHero } from 'components/core';
 
-import GlobalStyled from 'styles/global'
+import GlobalStyled from 'styles/global';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </div>
       </Base>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

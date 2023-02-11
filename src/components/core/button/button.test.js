@@ -5,14 +5,14 @@ import { Button } from './index';
 import GlobalStyled from 'styles/global';
 
 const testButton = () => {
-  const defaultRender = (props) => {
+  const defaultRender = props => {
     mount(
       <>
         <GlobalStyled />
         <Button name="test" {...props}>
           Hello
         </Button>
-      </>
+      </>,
     );
   };
 

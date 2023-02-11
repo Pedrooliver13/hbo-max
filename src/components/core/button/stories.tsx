@@ -13,29 +13,29 @@ export default {
     href: '#',
     startIcon: false,
     endIcon: false,
-    disabled: false
+    disabled: false,
   },
   argTypes: {
     color: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary']
-      }
+        options: ['primary', 'secondary'],
+      },
     },
     startIcon: {
       control: {
-        type: 'boolean'
-      }
+        type: 'boolean',
+      },
     },
     endIcon: {
       control: {
-        type: 'boolean'
-      }
-    }
-  }
+        type: 'boolean',
+      },
+    },
+  },
 } as Meta;
 
-export const Basic: Story = (args) => (
+export const Basic: Story = args => (
   <>
     <GlobalStyled />
     <Button

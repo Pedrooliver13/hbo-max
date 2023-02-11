@@ -9,8 +9,8 @@ interface LinkProps {
 const linkModifier = {
   notActive: {
     fontWeight: '400',
-    color: C.Gray
-  }
+    color: C.Gray,
+  },
 };
 
 export const Wrapper = styled.a<LinkProps>`

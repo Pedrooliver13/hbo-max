@@ -1,1 +1,1 @@
-export { default as ButtonBrand } from './button-brand'
+export { default as ButtonBrand } from './button-brand';

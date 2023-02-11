@@ -8,11 +8,11 @@ export default {
   component: ButtonBrand,
   args: {
     name: 'test',
-    logo: 'cartoon'
-  }
+    logo: 'cartoon',
+  },
 } as Meta;
 
-export const Basic: Story = (args) => (
+export const Basic: Story = args => (
   <>
     <GlobalStyled />
     <ButtonBrand {...args} name={args.name} brand={args.logo} />

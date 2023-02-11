@@ -4,12 +4,12 @@ import { CircularButton } from '.';
 import GlobalStyled from 'styles/global';
 
 const testCircularButton = () => {
-  const defaultRender = (props) => {
+  const defaultRender = props => {
     mount(
       <>
         <GlobalStyled />
         <CircularButton {...props} name="test" />
-      </>
+      </>,
     );
   };
 
