@@ -1,20 +1,17 @@
-// Packages
-import { ReactElement } from 'react'
+import { ReactElement } from 'react';
 
-// Assets
-import DefaultImage from 'assets/avatar.jpg'
+import DefaultImage from 'assets/avatar.jpg';
 
-// Styles
-import * as S from './styles'
+import * as S from './styles';
 
 interface AvatarProps {
-  id: string
-  href?: string
-  src?: string
-  alt?: string
-  label?: string
-  color?: 'primary' | 'secondary' | 'tertiary'
-  size?: 'sm' | 'md' | 'lg'
+  id: string;
+  href?: string;
+  src?: string;
+  alt?: string;
+  label?: string;
+  color?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const Avatar = ({ id, href, src, color, label, size, alt = 'Avatar image' }: AvatarProps): ReactElement => {
@@ -25,7 +22,7 @@ const Avatar = ({ id, href, src, color, label, size, alt = 'Avatar image' }: Ava
       </a>
       <div className="description">{label}</div>
     </S.Wrapper>
-  )
-}
+  );
+};
 
-export default Avatar
+export default Avatar;

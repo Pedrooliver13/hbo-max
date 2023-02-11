@@ -1,18 +1,16 @@
-// Packages
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react';
 
-// Styles
-import * as S from './styles'
+import * as S from './styles';
 
 interface ButtonProps {
-  name: string
-  href?: string
-  color?: 'primary' | 'secondary'
-  children: ReactNode
-  startIcon?: ReactElement | null
-  endIcon?: ReactElement | null
-  disabled?: boolean
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
+  name: string;
+  href?: string;
+  color?: 'primary' | 'secondary';
+  children: ReactNode;
+  startIcon?: ReactElement | null;
+  endIcon?: ReactElement | null;
+  disabled?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 const Button = ({ children, name, color, startIcon, endIcon, disabled, ...props }: ButtonProps): ReactElement => {
@@ -29,7 +27,7 @@ const Button = ({ children, name, color, startIcon, endIcon, disabled, ...props 
     >
       {startIcon} {children} {endIcon}
     </S.Wrapper>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

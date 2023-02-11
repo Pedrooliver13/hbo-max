@@ -1,8 +1,8 @@
-import { ReactElement } from 'react'
+import { ReactElement } from 'react';
 
-import HboLogo from 'assets/logo.svg'
+import HboLogo from 'assets/logo.svg';
 
-import * as S from './styles'
+import * as S from './styles';
 
 export const Header = (): ReactElement => {
   return (
@@ -13,5 +13,5 @@ export const Header = (): ReactElement => {
       </div>
       <div className="avatar">Avatar</div>
     </S.Wrapper>
-  )
-}
+  );
+};

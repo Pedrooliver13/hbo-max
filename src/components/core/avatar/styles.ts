@@ -9,26 +9,26 @@ interface AvatarProps {
 
 const avatarModifier = {
   primary: {
-    background: C.BlueGradient
+    background: C.BlueGradient,
   },
   secondary: {
-    background: C.PinkGradient
+    background: C.PinkGradient,
   },
   tertiary: {
-    background: C.PurpleGradient
+    background: C.PurpleGradient,
   },
   sm: {
     width: '4rem',
-    height: '4rem'
+    height: '4rem',
   },
   md: {
     width: '16.5rem',
-    height: '16.5rem'
+    height: '16.5rem',
   },
   lg: {
     width: '19.1rem',
-    height: '19.1rem'
-  }
+    height: '19.1rem',
+  },
 };
 
 export const Wrapper = styled.div<AvatarProps>`

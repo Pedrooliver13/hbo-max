@@ -4,7 +4,7 @@ import { Card } from '.';
 import GlobalStyled from 'styles/global';
 
 const testCard = () => {
-  const defaultRender = (props) => {
+  const defaultRender = props => {
     mount(
       <>
         <GlobalStyled />
@@ -14,7 +14,7 @@ const testCard = () => {
           href="https://www.imdb.com/title/tt0111161/"
           {...props}
         />
-      </>
+      </>,
     );
   };
 
@@ -45,9 +45,7 @@ describe('Card Component', () => {
     const { defaultRender, getCard } = testCard();
 
     defaultRender({ href: 'https://www.google.com' });
-    getCard()
-      .get('[data-cy=play]')
-      .should('have.attr', 'href', 'https://www.google.com');
+    getCard().get('[data-cy=play]').should('have.attr', 'href', 'https://www.google.com');
   });
 
   it('Should have a image', () => {
@@ -55,11 +53,9 @@ describe('Card Component', () => {
 
     defaultRender({
       image:
-        'https://images.moviesanywhere.com/a4d68b895ddea9e52e345e2f0c6838ab/423fc271-7a33-4155-92db-3c926d8c1af3.jpg'
+        'https://images.moviesanywhere.com/a4d68b895ddea9e52e345e2f0c6838ab/423fc271-7a33-4155-92db-3c926d8c1af3.jpg',
     });
-    getCard()
-      .should('have.css', 'background-image')
-      .should('include', '423fc271-7a33-4155-92db-3c926d8c1af3.jpg');
+    getCard().should('have.css', 'background-image').should('include', '423fc271-7a33-4155-92db-3c926d8c1af3.jpg');
   });
 
   it('Should be possible change size', () => {
@@ -68,12 +64,12 @@ describe('Card Component', () => {
     const cardModifier = {
       sm: {
         maxWidth: '200px',
-        height: '200px'
+        height: '200px',
       },
       md: {
         maxWidth: '200px',
-        height: '300px'
-      }
+        height: '300px',
+      },
     };
 
     defaultRender({ size: 'sm' });

@@ -9,11 +9,11 @@ export default {
   args: {
     name: 'test',
     label: 'Link',
-    isActive: true
-  }
+    isActive: true,
+  },
 } as Meta;
 
-export const Basic: Story = (args) => (
+export const Basic: Story = args => (
   <>
     <GlobalStyled />
     <Link {...args} name={args.name}>

@@ -13,23 +13,23 @@ const buttonModifier = {
   primary: {
     backgroundColor: C.Purple,
     color: C.White,
-    fontWeight: '700'
+    fontWeight: '700',
   },
   secondary: {
     backgroundColor: C.DarkGray,
-    color: C.White
+    color: C.White,
   },
   startIcon: {
-    marginRight: '.5rem'
+    marginRight: '.5rem',
   },
   endIcon: {
-    marginLeft: '.5rem'
+    marginLeft: '.5rem',
   },
   disabled: {
     fontWeight: '400',
     opacity: '0.5',
-    cursor: 'none'
-  }
+    cursor: 'none',
+  },
 };
 
 export const Wrapper = styled.a<ButtonProps>`
@@ -48,7 +48,7 @@ export const Wrapper = styled.a<ButtonProps>`
   border-radius: 2.6rem;
   text-transform: uppercase;
   transition: background 1s ease-in-out;
-  pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
+  pointer-events: ${props => (props.disabled ? 'none' : 'auto')};
 
   background-color: ${C.Purple};
 

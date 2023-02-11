@@ -23,9 +23,6 @@ export const DarkGray = '#3C3C3C';
 export const Black = '#0F0F0F';
 
 // gradient
-export const PinkGradient =
-  'linear-gradient(313.21deg, #FC00C4 16.17%, #FF8CE6 87.96%);';
-export const PurpleGradient =
-  'linear-gradient(90.36deg, #4710C1 3.28%, #7857FF 50.58%, #819BFD 96.22%)';
-export const BlueGradient =
-  'linear-gradient(308.16deg, #1400FF 15.36%, #72AAFF 84.52%)';
+export const PinkGradient = 'linear-gradient(313.21deg, #FC00C4 16.17%, #FF8CE6 87.96%);';
+export const PurpleGradient = 'linear-gradient(90.36deg, #4710C1 3.28%, #7857FF 50.58%, #819BFD 96.22%)';
+export const BlueGradient = 'linear-gradient(308.16deg, #1400FF 15.36%, #72AAFF 84.52%)';

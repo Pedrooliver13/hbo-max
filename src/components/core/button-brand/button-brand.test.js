@@ -4,12 +4,12 @@ import { ButtonBrand } from '.';
 import GlobalStyled from 'styles/global';
 
 const testButtonBrand = () => {
-  const defaultRender = (props) => {
+  const defaultRender = props => {
     mount(
       <>
         <GlobalStyled />
         <ButtonBrand {...props} name="test" />
-      </>
+      </>,
     );
   };
 

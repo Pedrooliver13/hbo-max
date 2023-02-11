@@ -11,18 +11,18 @@ const cardModifier = {
   sm: {
     maxWidth: '200px',
     width: '200px',
-    height: '200px'
+    height: '200px',
   },
   md: {
     maxWidth: '200px',
     width: '200px',
-    height: '300px'
+    height: '300px',
   },
   lg: {
     maxWidth: '348px',
     width: '348px',
-    height: '207px'
-  }
+    height: '207px',
+  },
 };
 
 export const Wrapper = styled.div<CardProps>`
