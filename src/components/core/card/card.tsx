@@ -1,7 +1,10 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Components
 import { CircularButton } from 'components/core';
 
+// Styles
 import * as S from './styles';
 
 interface CardProps {

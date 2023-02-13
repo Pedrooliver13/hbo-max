@@ -1,6 +1,9 @@
+// Packages
 import styled, { css } from 'styled-components';
 
+// Styles
 import * as C from 'styles/constants';
+
 interface ButtonProps {
   name: string;
   color?: 'primary' | 'secondary';

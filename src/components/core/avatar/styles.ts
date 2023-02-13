@@ -1,5 +1,7 @@
+// Packages
 import styled, { css } from 'styled-components';
 
+// Styles
 import * as C from 'styles/constants';
 
 interface AvatarProps {

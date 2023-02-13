@@ -1,6 +1,10 @@
+// Packages
 import { mount } from '@cypress/react';
 
-import { CircularButton } from '.';
+// Components
+import { CircularButton } from 'components/core';
+
+// Styles
 import GlobalStyled from 'styles/global';
 
 const testCircularButton = () => {

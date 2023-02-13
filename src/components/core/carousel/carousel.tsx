@@ -1,9 +1,12 @@
+// Packages
 import { ReactElement } from 'react';
 import Slider from 'react-slick';
 
+// Icons
 import { ArrowIosForwardOutline } from '@styled-icons/evaicons-outline/ArrowIosForwardOutline';
 import { ArrowIosBackOutline } from '@styled-icons/evaicons-outline/ArrowIosBackOutline';
 
+// Styles
 import * as S from './styles';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

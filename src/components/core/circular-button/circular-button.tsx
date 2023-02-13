@@ -1,9 +1,12 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Icons
 import { Add } from '@styled-icons/fluentui-system-filled/Add';
 import { PlayFill } from '@styled-icons/bootstrap/PlayFill';
 import { Check2 } from '@styled-icons/bootstrap/Check2';
 
+// Styles
 import * as S from './styles';
 
 interface CircularButtonProps {

@@ -7300,6 +7300,11 @@ eslint-plugin-flowtype@^8.0.3:
     lodash "^4.17.21"
     string-natural-compare "^3.0.1"
 
+eslint-plugin-grouped-import@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-grouped-import/-/eslint-plugin-grouped-import-1.0.3.tgz#28df207ac48842f6b66ecd2f156bb2999cc63e33"
+  integrity sha512-hzvuY3VjQq1ejASQD9TAm+Om805rak3p1v1jXNWfnYIsgFpR5nLcO8z6UTKzznThYFJ1izwO2BnLcocp+dRc/Q==
+
 eslint-plugin-import@^2.25.3:
   version "2.27.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.27.5.tgz#876a6d03f52608a3e5bb439c2550588e51dd6c65"

@@ -1,7 +1,10 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Assets
 import DefaultImage from 'assets/avatar.jpg';
 
+// Styles
 import * as S from './styles';
 
 interface AvatarProps {

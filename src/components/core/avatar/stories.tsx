@@ -1,6 +1,10 @@
+// Packages
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Avatar } from '.';
+// Components
+import { Avatar } from 'components/core';
+
+// Styles
 import GlobalStyled from 'styles/global';
 
 export default {

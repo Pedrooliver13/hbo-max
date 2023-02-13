@@ -1,7 +1,13 @@
+// Packages
 import { mount } from '@cypress/react';
+
+// Components
+import { Button } from 'components/core';
+
+// Icons
 import { Add } from '@styled-icons/fluentui-system-filled/Add';
 
-import { Button } from './index';
+// Styles
 import GlobalStyled from 'styles/global';
 
 const testButton = () => {

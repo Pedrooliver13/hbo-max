@@ -1,7 +1,10 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Assets
 import HboLogo from 'assets/logo.svg';
 
+// Styles
 import * as S from './styles';
 
 export const Header = (): ReactElement => {

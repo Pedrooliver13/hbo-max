@@ -1,6 +1,10 @@
+// Packages
 import { mount } from '@cypress/react';
 
-import { Card } from '.';
+// Components
+import { Card } from 'components/core';
+
+// Styles
 import GlobalStyled from 'styles/global';
 
 const testCard = () => {
