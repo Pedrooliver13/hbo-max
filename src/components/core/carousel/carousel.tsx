@@ -13,7 +13,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 interface CarouselProps {
   title: string;
-  children: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
 }
 
 interface CarouselArrowProps {
