@@ -1,11 +1,14 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Assets
 import HboLogo from 'assets/hbo.svg';
 import WarnerLogo from 'assets/warner.svg';
 import MaxLogo from 'assets/max.svg';
 import DcLogo from 'assets/dc.svg';
 import CartoonLogo from 'assets/cartoon.svg';
 
+// Styles
 import * as S from './styles';
 
 interface ButtonBrandProps {

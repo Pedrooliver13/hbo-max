@@ -1,6 +1,10 @@
+// Packages
 import { mount } from '@cypress/react';
 
-import { ButtonBrand } from '.';
+// Components
+import { ButtonBrand } from 'components/core';
+
+// Styles
 import GlobalStyled from 'styles/global';
 
 const testButtonBrand = () => {

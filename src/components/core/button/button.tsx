@@ -1,5 +1,7 @@
+// Packages
 import { ReactElement, ReactNode } from 'react';
 
+// Styles
 import * as S from './styles';
 
 interface ButtonProps {

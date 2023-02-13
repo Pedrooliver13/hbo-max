@@ -1,6 +1,10 @@
+// Templates
 import { Base } from 'templates';
+
+// Components
 import { Carousel, Card, SectionHero } from 'components/core';
 
+// Styles
 import GlobalStyled from 'styles/global';
 
 function App() {

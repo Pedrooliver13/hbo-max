@@ -1,7 +1,10 @@
+// Packages
 import { mount } from '@cypress/react';
 
-import { Avatar } from '.';
+// Components
+import { Avatar } from 'components/core';
 
+// Styles
 import GlobalStyled from 'styles/global';
 
 describe('Avatar Component', () => {

@@ -24,12 +24,28 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "grouped-import"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "grouped-import/group": [
+      "warn",
+      {
+        "Packages": [{ "path": "react" }, { "path": "styled-components" }, { "path": "react-slick" }],
+        "Components": [{ "path": "components" }],
+        "Templates": [{ "path": "templates" }],
+        "Constants": [{ "path": "./constants" }],
+        "Hooks": [{ "path": "hooks" }],
+        "Models": [{ "path": "models/" }, { "path": ".model" }],
+        "Services": [{ "path": "services" }, { "path": ".service" }],
+        "Stores": [{ "path": "store" }, { "path": ".reducer" }, { "path": ".api" }],
+        "Icons": [{ "path": "@styled-icons" }],
+        "Styles": [{ "path": "styles" }, { "path": ".css" }],
+        "Assets": [{ "path": "assets" }, { "path": ".png" }, { "path": ".svg" }, { "path": ".jpg" }, { "path": ".ttf" }]
+      }
+    ]
   }
 }

@@ -2,7 +2,7 @@
 import { mount } from '@cypress/react';
 
 // Components
-import { Link } from '.';
+import { Link } from 'components/core';
 
 // Styles
 import GlobalStyled from 'styles/global';

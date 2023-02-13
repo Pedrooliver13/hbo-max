@@ -1,8 +1,14 @@
+// Packages
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Add } from '@styled-icons/fluentui-system-filled/Add';
 
-import { Button } from '.';
+// Components
+import { Button } from 'components/core';
+
+// Styles
 import GlobalStyled from 'styles/global';
+
+// Icons
+import { Add } from '@styled-icons/fluentui-system-filled/Add';
 
 export default {
   title: 'Core/Button',

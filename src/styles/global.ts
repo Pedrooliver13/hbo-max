@@ -1,5 +1,7 @@
+// Packages
 import { createGlobalStyle } from 'styled-components';
 
+// Constants
 import * as C from './constants';
 
 const GlobalStyled = createGlobalStyle`

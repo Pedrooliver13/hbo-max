@@ -1,5 +1,7 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Styles
 import * as S from './styles';
 
 const SectionHero = (): ReactElement => {
