@@ -95,8 +95,8 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.5.8",
     "html-webpack-plugin": "4",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "prettier": "2.6.2",
     "webpack": "^5.72.0"
   }
