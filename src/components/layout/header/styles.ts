@@ -12,7 +12,14 @@ export const Wrapper = styled.header`
   max-width: 100%;
   width: 100%;
 
-  padding: 2rem;
+  padding: 2rem 4rem;
   margin-right: auto;
   margin-left: auto;
+
+  .avatar {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;

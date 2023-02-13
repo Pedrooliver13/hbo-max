@@ -7,7 +7,7 @@ import * as S from './styles';
 const SectionHero = (): ReactElement => {
   return (
     <S.Wrapper>
-      <img src="https://static.dw.com/image/62850747_101.jpg" alt="Section Hero" />
+      <img src="https://images3.alphacoders.com/106/thumb-1920-1065466.png" alt="Section Hero" />
     </S.Wrapper>
   );
 };
