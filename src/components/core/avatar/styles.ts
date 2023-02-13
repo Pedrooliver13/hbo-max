@@ -43,12 +43,10 @@ export const Wrapper = styled.div<AvatarProps>`
   ${({ color }) => css`
     ${color && avatarModifier[color]}
   `}
-
   ${({ size }) => css`
     ${size && avatarModifier[size]}
   `}
-
-  img {
+    img {
     overflow: hidden;
     max-width: 100%;
     width: 100%;
