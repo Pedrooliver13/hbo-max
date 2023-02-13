@@ -34,7 +34,9 @@
     "lint": "eslint src --max-warnings=0",
     "postinstall": "husky install",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "terminal": "node terminal-kit.js",
+    "a": "yarn terminal"
   },
   "lint-staged": {
     "src/**/*": [
@@ -95,9 +97,11 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.5.8",
     "html-webpack-plugin": "4",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "prettier": "2.6.2",
+    "terminal-kit": "^3.0.0",
+    "tree-kill": "^1.2.2",
     "webpack": "^5.72.0"
   }
 }
