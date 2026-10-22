@@ -22,15 +22,12 @@ $ cd hbo-max
 $ npm install or yarn install
 
 # Run the app
-$ npm start or yarn start
-```
-
-## 📖 How run storybook
+$567
 ```
 # Run storybook
 npm storybook or yarn storybook
 
-```
+``cinthia `
 
 ## 🧰 How run tests
 ```
